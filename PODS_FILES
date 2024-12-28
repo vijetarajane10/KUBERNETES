@@ -1,0 +1,20 @@
+Nginxpod.yml:
+
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: nginxpod
+ lables: 
+  app: myapp
+spec:
+ containers: 
+    - name: nginxcontainer
+      image: nginx
+      ports:
+       - containerPort: 80
+
+- Create a nginxpod.yml file.
+- To create pod using that file:
+kubectl apply -f nginxpod.yml    
+- To view list of Pods:
+kubectl get pods 
