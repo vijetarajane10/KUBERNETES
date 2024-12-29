@@ -18,3 +18,27 @@ spec:
 kubectl apply -f nginxpod.yml    
 - To view list of Pods:
 kubectl get pods 
+
+
+Server nodepod file 
+*myservice.yml:
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mynodeportservice
+spec:
+  type: NodePort
+  selector:
+      app: myapp
+  ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 80
+     nodePort: 30001
+CMD=
+(Create a myservice.yml file).
+(To create service using that file)
+-kubectl apply -f myservice.yml
+(To view list of services)
+-kubectl get services
